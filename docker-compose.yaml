@@ -1,32 +1,4 @@
 services:
-  airbyte-init:
-    extends:
-      file: airbyte-services.yaml
-      service: init
-  airbyte-bootloader:
-    extends:
-      file: airbyte-services.yaml
-      service: bootloader
-  airbyte-scheduler:
-    extends:
-      file: airbyte-services.yaml
-      service: scheduler
-  airbyte-worker:
-    extends:
-      file: airbyte-services.yaml
-      service: worker
-  airbyte-server:
-    extends:
-      file: airbyte-services.yaml
-      service: server
-  airbyte-webapp:
-    extends:
-      file: airbyte-services.yaml
-      service: webapp
-  airbyte-temporal:
-    extends:
-      file: airbyte-services.yaml
-      service: airbyte-temporal
   faros-db:
     extends:
       file: airbyte-services.yaml
@@ -38,7 +10,6 @@ services:
     build:
       context: .
     depends_on:
-      - airbyte-webapp
       - faros-db
     restart: on-failure
     environment:
